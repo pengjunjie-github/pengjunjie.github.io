@@ -286,7 +286,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-06-19 16:22:05 / 修改时间：17:03:35" itemprop="dateCreated datePublished" datetime="2020-06-19T16:22:05+08:00">2020-06-19</time>
+              <time title="创建时间：2020-06-19 16:22:05 / 修改时间：17:10:26" itemprop="dateCreated datePublished" datetime="2020-06-19T16:22:05+08:00">2020-06-19</time>
             </span>
 
           <br>
@@ -326,85 +326,6 @@
 </ul>
 <p>##如何建立github仓库？<br>1、注册<a href="http://github.com" target="_blank" rel="noopener">github</a>，具体方法网上很多不再累述</p>
 <p>2、下载安装<a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>（默认安装即可）</p>
-<p>3、绑定github</p>
-<ul>
-<li><p>利用Git的ssh服务创建公钥，利用公钥登录github，可以省去不必要的麻烦，避免每次登陆输入密码。</p>
-</li>
-<li><p>打开gitbash输入ssh-keygen -t rsa命令，之后会在C:/Users/用户名/.ssh路径下生成id_rsa、id_rsa.pub（公钥），将公钥中内容复制下来。</p>
-</li>
-<li><p>打开<a href="http://github.com" target="_blank" rel="noopener">github</a>，点击右上角头像，打开二级菜单中的setting选项。</p>
-</li>
-<li><p>点击左侧SSH and GPG keys选项，选择右上角New SSH key，将复制的公钥内容粘贴到内容框，单击Add SSH key。</p>
-</li>
-<li><p>Git Bash 中输入 <strong>ssh -T <a href="mailto:git@github.com">git@github.com</a></strong>命令，查看是否出现successful提醒。</p>
-</li>
-</ul>
-<p>4、提交文件</p>
-<ul>
-<li><p>创建仓库，点击reposistor，选择new新建仓库，注意勾选初始化。</p>
-</li>
-<li><p>克隆新建的仓库，点击Clone or download，复制地址，在准备建立本地仓库的文件夹右键打开git bash，输入git clone 地址（刚刚复制的），将远程仓库克隆到本地。</p>
-</li>
-<li><p>在本地仓库文件夹内创建测试txt文件，在文件夹中右键打开gitbash，键入<strong>git status</strong>查看状态，之后会提示测试txt文件untracked，此时使用 <strong>git add</strong> 测试txt文件名 将文件添加到缓冲区，再使用<strong>git commit -m “commit text file”</strong>命令提交文件到本地仓库</p>
-</li>
-<li><p>若提示输入用户名，键入两行代码</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git config --global user.name&quot;github用户名&quot;</span><br><span class="line">git config --global user.email&quot;aaa@aaa.com&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>git status查看仓库状态，使用git push oringin master命令提交到github，之后会提示输入密码，登录github查看仓库文件是否上传成功。</li>
-</ul>
-<p>5、购买域名</p>
-<ul>
-<li>我是用的<a href="https://wanwang.aliyun.com/" target="_blank" rel="noopener">万网</a>, .top域名很便宜。相关注册方法不再累述。</li>
-</ul>
-<p>6、安装nodejs</p>
-<ul>
-<li><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs</a>，安装很简单。</p>
-</li>
-<li><p>安装完成后，在nodejs安装分目录下创建node_cahe、node_global两个文件夹。在cmd中输入</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	npm config set prefix &quot;（安装路径对应盘符）\nodejs\node_global&quot;</span><br><span class="line">npm config set cache &quot;（安装路径对应盘符）\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>我安装在D盘</p>
-</li>
-<li><p>设置环境变量（文件管理器–此电脑–右键属性–高级系统设置–环境变量）添加环境变量NODE_PATH，赋值D:\nodejs\node_global\node_modules，用户变量path添加D:\nodejs\node_global，打开cmd执行<strong>npm install webpack -g</strong>命令。</p>
-</li>
-</ul>
-<p>7、安装hexo</p>
-<ul>
-<li><p>像之前在github创建仓库那样，需要再创建一个仓库，此仓库名必须为（github有户名.gihub.io），注意勾选初始化。</p>
-</li>
-<li><p>在D盘（我把本地仓库放在D盘，也可以是其他盘）常见Blog文件夹，进入文件夹右键打开git bash，输入</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">npm install -g hexo-cli  安装hexo</span><br><span class="line">hexo init  进行初始化</span><br><span class="line">hexo g  部署</span><br><span class="line">hexo s  运行</span><br></pre></td></tr></table></figure>
-
-<p>浏览器进入<a href="http://localhost:4000查看部署页面。">http://localhost:4000查看部署页面。</a></p>
-<ul>
-<li>打开Blog中的站点配置文件 _config.yml，在最下面添加内容</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">deploy:   </span><br><span class="line">type:   </span><br><span class="line">gitrepository: https:&#x2F;&#x2F;github.com&#x2F;Loliaircraft&#x2F;Loliaircraft.github.io.git  #你的仓库地址</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>打开Blog文件夹，右键gitbash键入npm install hexo-deployer-git –save安装git插件，输入</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">hexo clean	清除缓存和静态文件</span><br><span class="line">hexo g		生成网站静态文件</span><br><span class="line">hexo d		上传到远程仓库</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>进入https://（你的github名）.github.io即可打开部署在github的博客。</li>
-</ul>
-<p>8、解析域名</p>
-<ul>
-<li><p>ping （你的github名）.github.io得到github ipv4地址，打开Blog中的source文件夹，创建CNAME（无后缀）文件，写入你购买的域名地址如jayown.top。</p>
-</li>
-<li><p>登陆万网，查看购买的域名，点击解析，填入如下格式内容</p>
-</li>
-</ul>
-<p>![description][域名解析]<br>[域名解析]:如何搭建博客/wanwang.jpg “wanwang.jpg”</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" rel="contents">
