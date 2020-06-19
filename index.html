@@ -286,7 +286,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-06-19 16:22:05 / 修改时间：16:36:26" itemprop="dateCreated datePublished" datetime="2020-06-19T16:22:05+08:00">2020-06-19</time>
+              <time title="创建时间：2020-06-19 16:22:05 / 修改时间：16:47:07" itemprop="dateCreated datePublished" datetime="2020-06-19T16:22:05+08:00">2020-06-19</time>
             </span>
 
           <br>
@@ -332,11 +332,11 @@
 </li>
 <li><p>打开gitbash输入ssh-keygen -t rsa命令，之后会在C:/Users/用户名/.ssh路径下生成id_rsa、id_rsa.pub（公钥），将公钥中内容复制下来。</p>
 </li>
-<li><p>打开github（<a href="http://github.com），点击右上角头像，打开二级菜单中的setting选项。" target="_blank" rel="noopener">http://github.com），点击右上角头像，打开二级菜单中的setting选项。</a></p>
+<li><p>打开<a href="http://github.com" target="_blank" rel="noopener">github</a>，点击右上角头像，打开二级菜单中的setting选项。</p>
 </li>
 <li><p>点击左侧SSH and GPG keys选项，选择右上角New SSH key，将复制的公钥内容粘贴到内容框，单击Add SSH key。</p>
 </li>
-<li><p>Git Bash 中输入 ssh -T <a href="mailto:git@github.com">git@github.com</a>命令，查看是否出现successful提醒。</p>
+<li><p>Git Bash 中输入 <strong>ssh -T <a href="mailto:git@github.com">git@github.com</a></strong>命令，查看是否出现successful提醒。</p>
 </li>
 </ul>
 <p>4、提交文件</p>
@@ -345,34 +345,47 @@
 </li>
 <li><p>克隆新建的仓库，点击Clone or download，复制地址，在准备建立本地仓库的文件夹右键打开git bash，输入git clone 地址（刚刚复制的），将远程仓库克隆到本地。</p>
 </li>
-<li><p>在本地仓库文件夹内创建测试txt文件，在文件夹中右键打开gitbash，键入git status查看状态，之后会提示测试txt文件untracked，此时使用git add 测试txt文件名 将文件添加到缓冲区，再使用git commit -m “commit text file”命令提交文件到本地仓库</p>
+<li><p>在本地仓库文件夹内创建测试txt文件，在文件夹中右键打开gitbash，键入<strong>git status</strong>查看状态，之后会提示测试txt文件untracked，此时使用 <strong>git add</strong> 测试txt文件名 将文件添加到缓冲区，再使用<strong>git commit -m “commit text file”</strong>命令提交文件到本地仓库</p>
 </li>
-<li><p>若提示输入用户名，键入两行代码git config –global user.name”github用户名”、git config –global user.email”<strong><em>@</em></strong>.com”</p>
+<li><p>若提示输入用户名，键入两行代码</p>
 </li>
-<li><p>git status查看仓库状态，使用git push oringin master命令提交到github，之后会提示输入密码，登录github查看仓库文件是否上传成功。</p>
-</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git config --global user.name&quot;github用户名&quot;</span><br><span class="line">git config --global user.email&quot;aaa@aaa.com&quot;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>git status查看仓库状态，使用git push oringin master命令提交到github，之后会提示输入密码，登录github查看仓库文件是否上传成功。</li>
 </ul>
 <p>5、购买域名</p>
 <ul>
-<li>我是用的万网<a href="https://wanwang.aliyun.com/" target="_blank" rel="noopener">https://wanwang.aliyun.com/</a>, .top域名很便宜。相关注册方法不再累述。</li>
+<li>我是用的<a href="https://wanwang.aliyun.com/" target="_blank" rel="noopener">万网</a>, .top域名很便宜。相关注册方法不再累述。</li>
 </ul>
 <p>6、安装nodejs</p>
 <ul>
-<li><p>官网<a href="https://nodejs.org/en/，安装很简单。" target="_blank" rel="noopener">https://nodejs.org/en/，安装很简单。</a></p>
+<li><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs</a>，安装很简单。</p>
 </li>
-<li><p>安装完成后，在nodejs安装分目录下创建node_cahe、node_global两个文件夹。在cmd中输入npm config set prefix “（安装路径对应盘符）\nodejs\node_global”、npm config set cache “（安装路径对应盘符）\nodejs\node_cache”，我安装在D盘。</p>
+<li><p>安装完成后，在nodejs安装分目录下创建node_cahe、node_global两个文件夹。在cmd中输入</p>
 </li>
-<li><p>设置环境变量（文件管理器–此电脑–右键属性–高级系统设置–环境变量）添加环境变量NODE_PATH，赋值D:\nodejs\node_global\node_modules，用户变量path添加D:\nodejs\node_global，打开cmd执行npm install webpack -g命令。</p>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	npm config set prefix &quot;（安装路径对应盘符）\nodejs\node_global&quot;</span><br><span class="line">npm config set cache &quot;（安装路径对应盘符）\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>我安装在D盘</p>
+</li>
+<li><p>设置环境变量（文件管理器–此电脑–右键属性–高级系统设置–环境变量）添加环境变量NODE_PATH，赋值D:\nodejs\node_global\node_modules，用户变量path添加D:\nodejs\node_global，打开cmd执行<strong>npm install webpack -g</strong>命令。</p>
 </li>
 </ul>
 <p>7、安装hexo</p>
 <ul>
 <li><p>像之前在github创建仓库那样，需要再创建一个仓库，此仓库名必须为（github有户名.gihub.io），注意勾选初始化。</p>
 </li>
-<li><p>在D盘（我把本地仓库放在D盘，也可以是其他盘）常见Blog文件夹，进入文件夹右键打开git bash，输入npm install -g hexo-cli安装hexo，之后输入hexo init进行初始化，然后输入hexo g部署，hexo s运行，浏览器进入 <a href="http://localhost:4000查看部署页面。">http://localhost:4000查看部署页面。</a></p>
+<li><p>在D盘（我把本地仓库放在D盘，也可以是其他盘）常见Blog文件夹，进入文件夹右键打开git bash，输入</p>
 </li>
-<li><p>打开Blog中的站点配置文件 _config.yml，在最下面添加内容</p>
-</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">npm install -g hexo-cli  安装hexo</span><br><span class="line">hexo init  进行初始化</span><br><span class="line">hexo g  部署</span><br><span class="line">hexo s  运行</span><br></pre></td></tr></table></figure>
+
+<p>浏览器进入<a href="http://localhost:4000查看部署页面。">http://localhost:4000查看部署页面。</a></p>
+<ul>
+<li>打开Blog中的站点配置文件 _config.yml，在最下面添加内容</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">deploy:   </span><br><span class="line">type:   </span><br><span class="line">gitrepository: https:&#x2F;&#x2F;github.com&#x2F;Loliaircraft&#x2F;Loliaircraft.github.io.git  #你的仓库地址</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
 
